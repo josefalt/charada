@@ -1,0 +1,46 @@
+<p-toast position="top-center"></p-toast>
+
+<p-dialog [breakpoints]="{'960px': '75vw'}" [style]="{width: '70%'}"
+  [draggable]="false" [resizable]="false" [closable]="false" contentStyleClass="customDialog"
+  styleClass="customDialog" [(visible)]="dialogFinish">
+  <div class="container-f">
+    <h1>{{messageCode.message}}</h1>
+    <h1 (click)="ngOnInit()"><button pButton class="p-button-secondary">Clique para reiniciar!</button></h1>
+    <p *ngIf="messageCode.code != 0">
+
+    </p>
+  </div>
+</p-dialog>
+
+<div class="card">
+  <div class="card-container justify-content-center">
+    <div class="flex flex-row flex-wrap text-white">
+      <div class="w-full">
+        <header>
+          <button pButton class="p-button-secondary"(click)="ngOnInit()">Reiniciar</button>
+          <p class="title">
+            <span>CHARADA</span>
+          </p>
+        </header>
+
+        <main class="content">
+          <ng-container *ngFor="let word of words; index as indexLetter">
+            <app-set-letters
+              [currentWord]="indexSelect === indexLetter"
+              [correctWord]="correctWord"
+              [indexLineWordActual]="indexLetter"
+              [indexLineWord]="indexSelect"
+              [(newWord)]="newWord"
+              (emitLetters)="addNewWord($event)"
+              (emitMessage)="message($event)">
+            </app-set-letters>
+          </ng-container>
+        </main>
+
+        <footer>
+          <app-keyboard [lineKeyboard]="lineKeyboard"></app-keyboard>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

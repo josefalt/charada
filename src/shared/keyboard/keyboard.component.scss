@@ -1,0 +1,143 @@
+.button-keyboard {
+  touch-action: manipulation;
+  outline: none;
+  background-color: #401519;
+  grid-column: span 3;
+  display: flex;
+  font-size: 2em;
+  line-height: 1em;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8%;
+  font-weight: 500;
+  font-family: 'Mitr', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  width: 5rem;
+  height: 4rem;
+
+  &:hover{
+    background-color: #662227;
+  }
+  &:focus{
+    background-color: #662227;
+  }
+}
+.conten-button{
+  padding: 0.2rem 0;
+  margin-left: 0.6rem;
+}
+
+.start{
+  margin-left: 2%;
+}
+
+.final{
+  margin-left: 3%;
+}
+
+.corret{
+  background-color: #3aa394;
+  border: none;
+}
+
+
+.place{
+  background-color: #d3ad69;
+  border: none;
+}
+
+.wrong {
+  background-color: #191516;
+  border: none;
+  color: #5e5c5c;
+  animation: 0.45s linear flip 0s forwards
+}
+
+.btn-enter{
+  width: 10rem;
+  margin-left: 10%;
+}
+
+@media (max-width: 960px) {
+  .button-keyboard{
+    font-size: 1.6em;
+    width:  4rem;
+    height: 3rem;
+  }
+
+  .btn-enter{
+    width: 10rem;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 830px) {
+  .button-keyboard{
+    font-size: 1.4em;
+    width:  3rem;
+    height: 3rem;
+  }
+
+  .btn-enter{
+    width: 8rem;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 650px) {
+  .button-keyboard{
+    font-size: 1.2em;
+    width:  2rem;
+    height: 3rem;
+  }
+
+  .btn-enter{
+    width: 7rem;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 540px) {
+  .button-keyboard{
+    font-size: 1em;
+    width:  0.9em;
+    height: 3rem;
+    padding: 0.55rem 1.05rem
+  }
+
+  .btn-enter{
+    width: 5rem;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 457px) {
+  .button-keyboard{
+    font-size: 1em;
+    width:  1.7em;
+    height: 3rem;
+    padding: 0;
+  }
+
+  .btn-enter{
+    width: 5rem;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 320px) {
+  .button-keyboard{
+    font-size: 1em;
+    width:  1.4em;
+    height: 3rem;
+    padding: 0;
+  }
+
+  .btn-enter{
+    width: 5rem;
+    margin-left: 10%;
+  }
+}

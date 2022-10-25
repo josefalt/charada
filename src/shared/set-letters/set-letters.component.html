@@ -1,0 +1,16 @@
+<main class="container">
+  <ng-container *ngFor="let letter of letters; index as indexLetter">
+    <input *ngIf="currentWord"
+      [ngModel]="letter.letter" pKeyFilter="alpha" maxlength="1"
+      (click)="selectLetter(indexLetter)" inputmode="none"
+      [ngClass]="{'select': letter.select, 'select-focus': letter.letter === ''}"
+      (keydown)="addLetter($event, indexLetter)"  #input
+      type="text" pInputText class="letter empty">
+
+    <div *ngIf="!currentWord && letter.corret" class="letter corret">{{letter.letter}}</div>
+    <div *ngIf="!currentWord && letter.place && !letter.corret" class="letter place">{{letter.letter}}</div>
+    <div *ngIf="!currentWord && letter.wrong && !letter.corret && !letter.place" class="letter wrong">{{letter.letter}}</div>
+
+    <div *ngIf="!currentWord && !letter.wrong" class="letter"></div>
+  </ng-container>
+</main>

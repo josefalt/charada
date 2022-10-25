@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-container">
+    <div class="flex justify-content-center flex-row flex-wrap text-white">
+      <ng-container *ngFor="let letters of lineKeyboard.line0">
+        <div class="conten-button">
+          <button pButton pRipple type="button"
+            [ngClass]="{
+              'corret': letters.corret,
+              'place':letters.place && !letters.corret,
+              'wrong':letters.wrong && !letters.corret && !letters.place}"
+            label="{{letters.letter}}" (click)="letter(letters.letter)"
+            class="p-button-raised button-keyboard"></button>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="flex justify-content-center flex-row flex-wrap text-white">
+      <ng-container *ngFor="let letters of lineKeyboard.line1">
+        <div class="conten-button">
+          <button pButton pRipple type="button"
+            [ngClass]="{
+              'corret': letters.corret,
+              'place':letters.place && !letters.corret,
+              'wrong':letters.wrong && !letters.corret && !letters.place}"
+            label="{{letters.letter}}" (click)="letter(letters.letter)"
+            class="p-button-raised button-keyboard"></button>
+        </div>
+      </ng-container>
+      <div class="conten-button">
+        <button pButton pRipple type="button" (click)="letter('backspace')" class="p-button-raised button-keyboard"><<-</button>
+      </div>
+    </div>
+
+    <div class="flex justify-content-center flex-row flex-wrap text-white">
+      <ng-container *ngFor="let letters of lineKeyboard.line2">
+        <div class="conten-button">
+          <button pButton pRipple type="button"
+            [ngClass]="{
+              'corret': letters.corret,
+              'place':letters.place && !letters.corret,
+              'wrong':letters.wrong && !letters.corret && !letters.place}"
+            label="{{letters.letter}}" (click)="letter(letters.letter)"
+            class="p-button-raised button-keyboard"></button>
+        </div>
+      </ng-container>
+      <div class="conten-button">
+        <button pButton pRipple type="button" label="ENTER" (click)="letter('enter')" class="p-button-raised button-keyboard btn-enter"></button>
+      </div>
+    </div>
+  </div>
+</div>
